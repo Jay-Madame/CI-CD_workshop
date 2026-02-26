@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# But DO NOT ignore these:
+!main.py
+!main_test.py
+!README.md
+!tutorial.md
+!.github/
+!.gitignore

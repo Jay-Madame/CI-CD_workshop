@@ -28,8 +28,8 @@ jobs:
       - name: Upload results
         if: always()
         run: |
-          if [ -f summary.md ]; then
-            cat summary.md >> $GITHUB_STEP_SUMMARY
+          if [ -f results.md ]; then
+            cat results.md >> $GITHUB_STEP_SUMMARY
           else
             echo "No summary file found!" >> $GITHUB_STEP_SUMMARY
           fi

@@ -1,7 +1,0 @@
-First things first, make sure you fork the repo, clone it, etc. etc.
-
-Now to begin our tutorial!
-
-1. Run main.py
-
-
