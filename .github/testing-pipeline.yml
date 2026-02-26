@@ -1,0 +1,36 @@
+name: Chatbot CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12.3"]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Create virtual environment (venv)
+      run: |
+        python3.12 -m venv "$VENV_DIR"
+        source .venv/bin/activate
+
+		- name: Install Dependencies
+			run: pip install pytest
+
+    - name: Run tests
+      run: |
+        pytest main_test.py
+
+		- name: Upload results
+        if: always()
+        run: cat results.md >> $GITHUB_STEP_SUMMARY
+      
