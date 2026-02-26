@@ -16,9 +16,9 @@ def test_fix_me():
         with open("results.md", "w") as f:
             f.write("Your calculations passed! Good job!")
     else:
-        with open("rsults.md", "w") as f:
-            f.write("Uh oh! Looks like your logic is incorrect. Look over main.py")
-            f.write(f"Expected results: **{expected_ans}**. Actual restuls: **{actual_ans}**")
+        with open("results.md", "w") as f:
+            f.write("Uh oh! Looks like your logic is incorrect. Look over main.py\n")
+            f.write(f"Expected results: **{expected_ans}**. Actual results: **{actual_ans}**")
     
     assert is_correct
         
